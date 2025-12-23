@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html lang="vi"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Hồ Sơ - Vũ Đình Mạnh</title> 
+    <style>
+        body { 
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; 
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card { 
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        /* PHẦN TÊN ĐÃ ĐƯỢC CẬP NHẬT */
+        .main-name { 
+            margin: 5px 0; 
+            color: #1d1d1f; 
+            font-size: 26px; 
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .tw-name {
+            display: block;
+            font-size: 20px;
+            color: #636e72;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .sub-title { 
+            color: #00b894; 
+            font-weight: 600; 
+            font-size: 15px; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .info-box { 
+            text-align: left; 
+            border-top: 1px solid #f1f1f1; 
+            padding-top: 20px; 
+        }
+        .info-box p { 
+            margin: 12px 0; 
+            color: #4a4a4a; 
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .info-box strong {
+            width: 90px;
+            color: #95a5a6;
+            font-weight: 500;
+        }
+
+        .btn-line {
+            background-color: #00B900;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-line:hover {
+            background-color: #009900;
+        }
+        #qr-code {
+            display: none;
+            width: 180px;
+            margin: 20px auto 0;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head> 
+<body> 
+
+    <div class="card">
+        <img src="images/123.jpg" alt="Vũ Đình Mạnh" class="avatar"> 
+        
+        <div class="main-name">Vũ Đình Mạnh</div> 
+        <div class="tw-name">武廷孟</div>
+        
+        <div class="sub-title">Học sinh · Người yêu ngôn ngữ</div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <p><strong>Quốc tịch</strong> Việt Nam 🇻🇳</p> 
+                <p><strong>Sở thích</strong> Nghe nhạc, xem phim</p>
+                <p><strong>Mục tiêu</strong> Học tập, kết bạn</p>
+            </div>
+        </div>
+
+        <button class="btn-line" onclick="toggleQR()">💬 Hiện mã QR Line</button>
+
+        <img src="images/1234.jpg" alt="Mã QR" id="qr-code">
+    </div> 
+
+    <script>
+        function toggleQR() {
+            var qr = document.getElementById("qr-code");
+            var btn = document.querySelector(".btn-line");
+            if (qr.style.display === "none" || qr.style.display === "") {
+                qr.style.display = "block";
+                btn.innerHTML = "× Đóng mã QR";
+                btn.style.backgroundColor = "#636e72";
+            } else {
+                qr.style.display = "none";
+                btn.innerHTML = "💬 Hiện mã QR Line";
+                btn.style.backgroundColor = "#00B900";
+            }
+        }
+    </script>
+</body> 
+</html>
